@@ -7,12 +7,12 @@ for y in range(pocet_radku):
         if aktualni_znak == 'S': 
             start_x = x 
             start_y = y
-rada = [(start_y, start_x)]
+fronta = [(start_y, start_x)]
 navstiveno = [(start_y, start_x)]
 rodice = {}
 cil_nalezen = False
-while len(rada) > 0: 
-    aktualni_y, aktualni_x = rada.pop(0)
+while len(fronta) > 0: 
+    aktualni_y, aktualni_x = fronta.pop(0)
     if mapa_1[aktualni_y][aktualni_x] == 'K': 
         print("Mám cíl")
         cil_nalezen = True
@@ -24,7 +24,7 @@ while len(rada) > 0:
         novy_x = aktualni_x + zmena_x
 
         if (0 <= novy_y < pocet_radku) and (0 <= novy_x < pocet_sloupcu) and (mapa_1[novy_y][novy_x] != '#') and ((novy_y, novy_x) not in navstiveno):
-            rada.append((novy_y, novy_x))
+            fronta.append((novy_y, novy_x))
             navstiveno.append((novy_y, novy_x))
 
             rodice[(novy_y, novy_x)] = (aktualni_y, aktualni_x)
