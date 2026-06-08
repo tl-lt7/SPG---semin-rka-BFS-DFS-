@@ -32,7 +32,7 @@ while len(zasobnik) > 0:
             navstiveno.append((novy_y, novy_x))
 
             rodice[(novy_y, novy_x)] = (aktualni_y, aktualni_x)
-print(f"Tady jsou cesty, kudy jsem zkoušel jít {len(navstiveno)}")
+print(f"Počet cest, kudy jsem zkoušel jít {len(navstiveno)}")
 if cil_nalezen: 
     cesta = []
     aktualni_bod = (aktualni_y, aktualni_x)
